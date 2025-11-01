@@ -118,17 +118,17 @@ export const CakeCard: React.FC<CakeCardProps> = ({ cake, showDetails = false })
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
                   Floral Color
                 </label>
-                <div className="flex gap-2 flex-wrap">
+                <div className="grid grid-cols-6 gap-2">
                   {FLORAL_COLORS.map((color) => (
                     <button
                       key={color.name}
                       onClick={() =>
                         setCustomization({ ...customization, floralColor: color.name })
                       }
-                      className={`w-12 h-12 rounded-lg border-3 transition-all ${
+                      className={`w-10 h-10 rounded-lg transition-colors ${
                         customization.floralColor === color.name
-                          ? "border-gray-800 scale-110"
-                          : "border-gray-200 hover:border-gray-400"
+                          ? "ring-2 ring-rose-500"
+                          : "ring-1 ring-gray-200 hover:ring-2 hover:ring-gray-300"
                       }`}
                       style={{ backgroundColor: color.hex }}
                       title={color.name}
